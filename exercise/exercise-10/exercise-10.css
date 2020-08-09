@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 ;
+    outline: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+    background: #F1F9FB;
+}
+.box-all {
+    width: 800px;
+    height: auto;
+    margin: 0 auot;
+}
+.left, .right {
+    float: left;
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+.left {
+    background: #7A8393;
+}
+.right {
+    background: #fff;
+}
+/*------------------------------------------------------响应宽度*/
+@media only screen and (min-width:1001px) {
+    .left, .right {
+    width: 400px;
+    height: 400px;
+   }
+}
+@media only screen and (max-width: 1000px) and (min-width: 600px) {
+    .box-all {
+        width: 600px;
+        height: auto;
+    }
+    .left, .right {
+        width: 300px;
+        height: 300px;
+       }
+}
+@media only screen and (max-width:600px) {
+    .box-all {
+        width: 300px;
+        height: auto;
+    }
+    .left, .right {
+        width: 300px;
+        height: 300px;
+       
+   }
+}
+/*-------------------------------------------------button--*/
+.button-left, .button-right {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -18px;
+    margin-top: -30px;
+    width: 36px;
+    height: 60px;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    box-shadow: 0 0 0 3px #fff;
+}
+.button-right {
+    box-shadow: 0 0 0 3px #7A8394;
+}
+.button-left:hover {
+    background: #fff;
+    
+}
+.button-right:hover {
+    background: #7A8394;
+    
+}
+/*-------------------------------------------------circle--*/
+.button-left:before, .button-right:before {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    margin-left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    content: "";
+    transition: all 1s ;
+    background: #fff;
+} 
+.button-right:before {
+    background: #7A8394;
+}
+/*-------------------------------------------------circle:hover--*/
+.button-left:hover:before, .button-right:hover:before{
+    margin-top: 15px;
+    background: #7A8394;
+}
+.button-right:hover:before {
+    background: #fff;
+}
+/*-------------------------------------------------text--*/
+.button-left:after, .button-right:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -90px;
+    margin-top: -10px;
+    content: "SOMEGHING";
+    letter-spacing:10px;
+    transition: all 1s ;
+    color: rgba(0, 0, 0, 0)
+} 
+/*-------------------------------------------------text:hover--*/
+.button-left:hover:after, .button-right:hover:after{
+    margin-top: -70px;
+    color: #fff;
+    letter-spacing:14px;
+    margin-left: -105px;
+}
+.button-right:hover:after {
+    color: #7A8394;
+}
