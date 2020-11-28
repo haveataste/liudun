@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>myplayer</title>
+</head>
+<body>
+<script type="text/javascript" src="https://gitee.com/niandeng/ckplayer/raw/master/ckplayer/ckplayer.min.js" charset="utf-8" data-name="ckplayer"></script>
+<div class="video" style="width: 600px;height: 400px;"></div>
+<script type="text/javascript">
+    var videoObject = {
+        container: '.video',
+        variable: 'player',
+        video: 'https://imdb-video.media-imdb.com/vi2935079193/1434659607842-pgv4ql-1602686393734.mp4?Expires=1606649303&Signature=Rv9FOTDpkD1yBOh5LTDkvS3by92zSdRK9YH9-Mn7fqyj7T8j78u3m3RFcZ1pLdy2frt~J-ge8GP5xoqSttRgsqATJtbSOMdUp~gkIgcwYnwRVp5BMvif0rvPM3Duy8cvxH2CcYQtZU0QAOrglLm1Ddnx8nAFmzh~yS0-uWonIFKSukhe-qfuAyanUXwj047VFm7lHc1HtQtcoIY~qzOLB2ONsdjVNYUY5YurYL8-cv~llSAS8q4K5qofxJVNKU~enJUr960JtWWd0QU5ot5COFRThdBOAvyufV0-OwA5g7B8c0rZjVt5sH5wd11xVpNx564A5hBMBATjf70FT6RG8w__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA'
+    };
+    var player = new ckplayer(videoObject);
+</script>
+</body>
+</html>
