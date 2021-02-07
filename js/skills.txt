@@ -1,0 +1,21 @@
+>$.fn.jquery
+>"2.2.0"
+>$('body').jquery
+>"2.2.0"
+ 
+var sn = document.createElement('script');
+sn.src = "http://cdn.staticfile.org/jquery/3.4.1/jquery.js";
+document.getElementsByTagName('head')[0].appendChild(sn);
+
+//cookie读取、写入、删除插件jquery.cookie.js
+sn.src = "https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js";
+$.cookie('key', 'value', { expires:7, path:'/', secure:false, })
+
+//CDN加载js就不会产生跨域问题
+//Cross-Origin Read Blocking (CORB) blocked cross-origin response https://raw.githubusercontent.com/haveataste/js/master/hash.js with MIME type text/plain. See https://www.chromestatus.com/feature/5629709824032768 for more details.
+
+//js对象转换成jquery对象。 $(js对象);
+//jquery对象转换成js对象。 (1)jquery对象[索引值] (2)jquery对象.get(索引值).
+
+//数组利用ES6 Set去重
+Array.from(new Set([1,2,3,4,5,5])).length
