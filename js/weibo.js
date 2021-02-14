@@ -21,3 +21,9 @@ function d(){
         }
     }
 })()
+
+// 相册中下载大图 https://wx3.sinaimg.cn/large/
+var sn = document.createElement('script');
+sn.src = "https://cdn.staticfile.org/jquery/3.4.1/jquery.js";
+document.getElementsByTagName('head')[0].appendChild(sn);
+$('img.photo_pict').each((k,v)=>console.log($(v).attr('src').split('?')[0].split('/').pop()))
