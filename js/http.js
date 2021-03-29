@@ -1,3 +1,6 @@
+const http = require('http');
+const fs = require('fs');
+
 http.createServer(function(request, response){
     var body = request.socket.remoteAddress.toString() + '\n' + request.socket.remotePort + '\n';
     var url = request.url;
