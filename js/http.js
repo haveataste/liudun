@@ -7,11 +7,14 @@ http.createServer(function(request, response){
     var url = request.url;
     if(url === '/'){
         response.writeHead(200, {'Content-Type': 'text/plain;charset=UTF-8'});
-        fs.readFile('./http.js', function(err, data){
-            if(err){response.write('Ops, error!');}
-            else{response.write(data);}
-            response.end(body);
+        fs.readFile('./http.js', (err, data) => {
+            if(err){
+                response.write('Ops, error!');
+            } else{
+                response.write(data);
+            }
         });
+        response.end(body);
     }
 }).listen(8080);
 
