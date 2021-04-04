@@ -42,6 +42,10 @@ while (nodes){
 js中selector的使用：
 document.querySelectorAll('a').forEach(i=>console.log(i.href));
 
+document.getElementById( "logic_id" ).innerHTML; // td里有html元素的时候
+document.getElementById( "logic_id" ).innerText; //td里只有字符的时候
+document.getElementById( "logic_id" ).value; //这个td没有value这个参数你是获取不到的，除非你在<td value="xxx">这样你就能获取了，但是这种写法一般只用于input 输入框
+
 #代表网页中的一个位置，其右面的字符就是该位置的标识符。仅用来指导浏览器动作的，对服务器端完全无用。浏览器读取这个URL后，会自动将该位置滚动至可视区域。
 为网页位置指定标识符，有两个方法。一是使用锚点，比如<a name="print"></a>，二是使用id属性，比如<div id="print">。
 ?有连接域名和参数的作用、清除缓存的作用。
