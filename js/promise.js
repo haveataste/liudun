@@ -17,3 +17,22 @@ p.then((message) => {
 // fetch API
 fetch('https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS').then((res)=>res.text()).then(data=>console.log(data));
 fetch('https://cors-anywhere.herokuapp.com/www.google.com', {method:'get', Origin:null}).then(res=>res.text()).then(data=>console.log(data.substr(1,100)));
+fetch('http://aruner.net/resources/access-control-with-get/', {method:'GET', headers:{'Origin':'http://arunranga.com'}});
+
+function postData(url, data) {
+  // Default options are marked with *
+  return fetch(url, {
+    body: JSON.stringify(data), // must match 'Content-Type' header
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, same-origin, *omit
+    headers: {
+      'user-agent': 'Mozilla/4.0 MDN Example',
+      'content-type': 'application/json'
+    },
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, cors, *same-origin
+    redirect: 'follow', // manual, *follow, error
+    referrer: 'no-referrer', // *client, no-referrer
+  })
+  .then(response => response.json()) // parses response to JSON
+}
