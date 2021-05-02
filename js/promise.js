@@ -15,6 +15,7 @@ p.then((message) => {
 
 
 // fetch API
+// 除非响应报文包含了正确CORS响应头: {'Access-Control-Allow-Origin': '*'}
 fetch('https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS').then((res)=>res.text()).then(data=>console.log(data));
 fetch('https://cors-anywhere.herokuapp.com/www.google.com', {method:'get', Origin:null}).then(res=>res.text()).then(data=>console.log(data.substr(1,100)));
 fetch('http://aruner.net/resources/access-control-with-get/', {method:'GET', headers:{'Origin':'http://arunranga.com'}});
