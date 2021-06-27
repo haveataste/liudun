@@ -4,6 +4,9 @@ https://apps.game.qq.com/CommArticle/app/reg/gdate.php
 # Avgle API
 https://avgle.github.io/doc/?javascript#introduction
 
+# 迅雷 JS-SDK
+http://open.thunderurl.com/#/
+
 # BT种子存储查询
 https://torrage.info/torrent.php?h=
 
