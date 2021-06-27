@@ -1,6 +1,9 @@
 # var json_curdate = '2021-05-05 12:40:44';
 https://apps.game.qq.com/CommArticle/app/reg/gdate.php
 
+# Avgle API
+https://avgle.github.io/doc/?javascript#introduction
+
 # BT种子存储查询
 https://torrage.info/torrent.php?h=
 
