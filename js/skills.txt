@@ -81,28 +81,3 @@ $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
 
 //数组利用ES6 Set去重
 Array.from(new Set([1,2,3,4,5,5])).length
-
-fetch(URL).then(res=>res.text()).then(data=>console.log(data));
-fetch(URL, {headers: {'content-type': 'application/json',}, method: 'GET',}).then(res=>res.json()).then(data=>console.log(data)).catch(error=>console.error(error));
-
-postData('http://example.com/answer', {answer: 42})
-  .then(data => console.log(data)) // JSON from `response.json()` call
-  .catch(error => console.error(error))
-
-function postData(url, data) {
-  // Default options are marked with *
-  return fetch(url, {
-    body: JSON.stringify(data), // must match 'Content-Type' header
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, same-origin, *omit
-    headers: {
-      'user-agent': 'Mozilla/4.0 MDN Example',
-      'content-type': 'application/json'
-    },
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, cors, *same-origin
-    redirect: 'follow', // manual, *follow, error
-    referrer: 'no-referrer', // *client, no-referrer
-  })
-  .then(response => response.json()) // parses response to JSON
-}
