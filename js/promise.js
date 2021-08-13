@@ -15,7 +15,7 @@ p.then((message) => {
 
 
 // fetch API
-fetch(URL).then(res=>res.text()).then(data=>console.log(data));
+fetch(url).then(res=>res.text()).then(data=>console.log(data));
 fetch(url, {
   method: 'POST', // or 'PUT'
   body: JSON.stringify(data), // data can be `string` or {object}!
