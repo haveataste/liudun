@@ -16,7 +16,13 @@ p.then((message) => {
 
 // fetch API
 fetch(URL).then(res=>res.text()).then(data=>console.log(data));
-fetch(URL, {headers: {'content-type': 'application/json',}, method: 'GET',}).then(res=>res.json()).then(data=>console.log(data)).catch(error=>console.error(error));
+fetch(url, {
+  method: 'POST', // or 'PUT'
+  body: JSON.stringify(data), // data can be `string` or {object}!
+  headers: new Headers({
+    'Content-Type': 'application/json'
+  })
+}).then(res=>res.json()).then(data=>console.log(data)).catch(error=>console.error(error));
 // 除非响应报文包含了正确CORS响应头: {'Access-Control-Allow-Origin': '*'}
 fetch('https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS').then((res)=>res.text()).then(data=>console.log(data));
 fetch('https://cors-anywhere.herokuapp.com/www.google.com', {method:'get', Origin:null}).then(res=>res.text()).then(data=>console.log(data.substr(1,100)));
