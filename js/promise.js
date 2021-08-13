@@ -1,3 +1,4 @@
+// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
 let p = new Promise((resolve, reject) => {
     let a = 1+1;
     if ( a == 2 ) {
@@ -14,7 +15,7 @@ p.then((message) => {
 });
 
 
-// fetch API
+// fetch API: https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
 fetch(url).then(res=>res.text()).then(data=>console.log(data));
 fetch(url, {
   method: 'POST', // or 'PUT'
