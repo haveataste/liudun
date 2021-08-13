@@ -42,9 +42,9 @@ while (nodes){
 js中selector的使用：
 document.querySelectorAll('a').forEach(i=>console.log(i.href));
 
-document.getElementById( "logic_id" ).innerHTML; // td里有html元素的时候
+document.getElementById( "logic_id" ).innerHTML; //td里有html元素的时候
 document.getElementById( "logic_id" ).innerText; //td里只有字符的时候
-document.getElementById( "logic_id" ).value; //这个td没有value这个参数你是获取不到的，除非你在<td value="xxx">这样你就能获取了，但是这种写法一般只用于input 输入框
+document.getElementById( "logic_id" ).value;     //这个td没有value这个参数你是获取不到的，除非你在<td value="xxx">这样你就能获取了，但是这种写法一般只用于input输入框
 
 #代表网页中的一个位置，其右面的字符就是该位置的标识符。仅用来指导浏览器动作的，对服务器端完全无用。浏览器读取这个URL后，会自动将该位置滚动至可视区域。
 为网页位置指定标识符，有两个方法。一是使用锚点，比如<a name="print"></a>，二是使用id属性，比如<div id="print">。
@@ -82,4 +82,27 @@ $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
 //数组利用ES6 Set去重
 Array.from(new Set([1,2,3,4,5,5])).length
 
-fetch(URL, {headers: {'content-type': 'application/json',}, method: 'GET',})
+fetch(URL).then(res=>res.text()).then(data=>console.log(data));
+fetch(URL, {headers: {'content-type': 'application/json',}, method: 'GET',}).then(res=>res.json()).then(data=>console.log(data)).catch(error=>console.error(error));
+
+postData('http://example.com/answer', {answer: 42})
+  .then(data => console.log(data)) // JSON from `response.json()` call
+  .catch(error => console.error(error))
+
+function postData(url, data) {
+  // Default options are marked with *
+  return fetch(url, {
+    body: JSON.stringify(data), // must match 'Content-Type' header
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, same-origin, *omit
+    headers: {
+      'user-agent': 'Mozilla/4.0 MDN Example',
+      'content-type': 'application/json'
+    },
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, cors, *same-origin
+    redirect: 'follow', // manual, *follow, error
+    referrer: 'no-referrer', // *client, no-referrer
+  })
+  .then(response => response.json()) // parses response to JSON
+}
