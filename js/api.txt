@@ -1,3 +1,8 @@
+# IP
+http://icanhazip.com/
+http://ip.cip.cc
+https://ip.apps.cntv.cn/whereis
+
 # var json_curdate = '2021-05-05 12:40:44';
 https://apps.game.qq.com/CommArticle/app/reg/gdate.php
 
