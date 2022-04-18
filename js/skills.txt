@@ -1,9 +1,4 @@
-浏览器内核:
-Microsoft的Trident(IE内核)
-Firefox的Gecko(火狐内核)
-Apple的Webkit(Safari内核)
-Google的Blink(Chrome内核)
-Opera的Presto(已废弃,Opera)
+浏览器内核: Microsoft的Trident(IE内核), Firefox的Gecko(火狐内核), Apple的Webkit(Safari内核), Google的Blink(Chrome内核), Opera的Presto(已废弃,Opera)
 
 HTTP协议是无状态协议，即对事务处理没有记忆能力。
 
@@ -64,7 +59,10 @@ document.forms.length
 >"2.2.0"
 >$('body').jquery
 >"2.2.0"
- 
+
+//js对象转换成jquery对象。 $(js对象);
+//jquery对象转换成js对象。 (1)jquery对象[索引值] (2)jquery对象.get(索引值).
+
 var sn = document.createElement('script');
 sn.src = "http://cdn.staticfile.org/jquery/3.4.1/jquery.js";
 document.getElementsByTagName('head')[0].appendChild(sn);
@@ -76,8 +74,8 @@ $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
 //CDN加载js就不会产生跨域问题
 //Cross-Origin Read Blocking (CORB) blocked cross-origin response https://raw.githubusercontent.com/haveataste/js/master/hash.js with MIME type text/plain. See https://www.chromestatus.com/feature/5629709824032768 for more details.
 
-//js对象转换成jquery对象。 $(js对象);
-//jquery对象转换成js对象。 (1)jquery对象[索引值] (2)jquery对象.get(索引值).
-
 //数组利用ES6 Set去重
 Array.from(new Set([1,2,3,4,5,5])).length
+
+//截取字符串
+
