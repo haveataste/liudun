@@ -54,10 +54,10 @@ window.document.getElementById("elements");
 window.document.cookie
 document.forms.length
 util = {
-    isXP    = navigator.userAgent.indexOf("Windows NT 5.1")>-1;
-    isVista = navigator.userAgent.indexOf("Windows NT 6.0")>-1;
-    isWin7  = navigator.userAgent.indexOf("Windows NT 6.1")>-1;
-    _screen = screen.width + 'x' + screen.height;
+    isXP    : navigator.userAgent.indexOf("Windows NT 5.1")>-1,
+    isVista : navigator.userAgent.indexOf("Windows NT 6.0")>-1,
+    isWin7  : navigator.userAgent.indexOf("Windows NT 6.1")>-1,
+    _screen : screen.width + 'x' + screen.height
 }; 
 
 >$.fn.jquery
