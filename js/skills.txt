@@ -1,60 +1,45 @@
 浏览器内核: Microsoft的Trident(IE内核), Firefox的Gecko(火狐内核), Apple的Webkit(Safari内核), Google的Blink(Chrome内核), Opera的Presto(已废弃,Opera)
-
 HTTP协议是无状态协议，即对事务处理没有记忆能力。
+为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句 "use strict"; 
 
-为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句 "use strict"; （或 'use strict';）
+#代表网页中的一个位置，其右面的字符就是该位置的标识符。仅用来指导浏览器动作的，对服务器端完全无用。浏览器读取这个URL后，会自动将该位置滚动至可视区域。作为网页位置指定标识符，有两个方法。一是使用锚点，比如<a name="print"></a>，二是使用id属性，比如<div id="print">。
+?有连接域名和参数的作用、清除缓存的作用。
+&是不同参数的间隔符。
 
-js获取元素属性和自定义属性
-获取元素的属性分为两种类型：
-1-获取元素常见的属性（class,id,type,value……）
-2-获取自定义的元素的属性（data-value,data-mess…….）
-获取元素的属性，设置元素的属性：
-1-原生js
-设置属性 .setAttribute("属性","值")
-获取属性 .getAttribute("属性")
-2-jquery
-设置属性 .attr("属性","值")
-获取属性 .attr("属性")
-3-prop:读取dom原生属性
-$("#id").prop("edit-id","123");
+JS获取元素属性和自定义属性，设置属性：
+1.原生JS
+element.getAttribute("属性")
+element.setAttribute("属性","值")
+2.jquery
+$(element).attr("属性")
+$(element).attr("属性","值")
+3.prop:读取DOM原生属性
 $("#id").prop("edit-id");
+$("#id").prop("edit-id","123");
 
-js中xpath的使用：
+JS中xpath的使用：
 var result = document.evaluate("//a[@href]", document, null, XPathResult.ANY_TYPE, null);
 var nodes = result.iterateNext(); //枚举第一个元素
 while (nodes){
     console.log(nodes.getAttribute('href'));
     nodes=result.iterateNext(); //枚举下一个元素
 }
-demo:
-var result = document.evaluate("//div[@article_id]", document, null, XPathResult.ANY_TYPE, null);
-
-var nodes = result.iterateNext();
-while (nodes){
-    console.log(JSON.parse(nodes.getAttribute('content'))[0]['src'].split('?')[0].split('/')[4]);
-    nodes=result.iterateNext();
-}
-js中selector的使用：
+JS中selector的使用：
 document.querySelectorAll('a').forEach(i=>console.log(i.href));
 
-document.getElementById( "logic_id" ).innerHTML; //td里有html元素的时候
-document.getElementById( "logic_id" ).innerText; //td里只有字符的时候
-document.getElementById( "logic_id" ).value;     //这个td没有value这个参数你是获取不到的，除非你在<td value="xxx">这样你就能获取了，但是这种写法一般只用于input输入框
+document.getElementById("logic_id").innerHTML; //td里有html元素的时候
+document.getElementById("logic_id").innerText; //td里只有字符的时候
+document.getElementById("logic_id").value;     //这个td没有value这个参数你是获取不到的，除非你在<td value="xxx">这样你就能获取了，但是这种写法一般只用于input输入框
 
-#代表网页中的一个位置，其右面的字符就是该位置的标识符。仅用来指导浏览器动作的，对服务器端完全无用。浏览器读取这个URL后，会自动将该位置滚动至可视区域。
-为网页位置指定标识符，有两个方法。一是使用锚点，比如<a name="print"></a>，二是使用id属性，比如<div id="print">。
-?有连接域名和参数的作用、清除缓存的作用。
-&是不同参数的间隔符。
-
+window.document.getElementById("elements");
+window.document.cookie
+window.document.forms.length
 window.innerHeight, window.innerWidth
 window.screen.height
 window.location.href
 window.history.back()
-window.document.getElementById("elements");
-window.document.cookie
-document.forms.length
 util = {
-    isXP    : navigator.userAgent.indexOf("Windows NT 5.1")>-1,
+    isXP    : window.navigator.userAgent.indexOf("Windows NT 5.1")>-1,
     isVista : navigator.userAgent.indexOf("Windows NT 6.0")>-1,
     isWin7  : navigator.userAgent.indexOf("Windows NT 6.1")>-1,
     _screen : screen.width + 'x' + screen.height
@@ -64,27 +49,18 @@ util = {
 >"2.2.0"
 >$('body').jquery
 >"2.2.0"
-
-//js对象转换成jquery对象。 $(js对象);
-//jquery对象转换成js对象。 (1)jquery对象[索引值] (2)jquery对象.get(索引值).
-
-var sn = document.createElement('script');
-sn.src = "http://cdn.staticfile.org/jquery/3.4.1/jquery.js";
-document.getElementsByTagName('head')[0].appendChild(sn);
+JS对象转换成jquery对象: $(JS对象);
+jquery对象转换成JS对象: 1.jquery对象[索引值]; 2.jquery对象.get(索引值).
 
 //cookie读取、写入、删除插件jquery.cookie.js
 sn.src = "https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js";
 $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
 
-//CDN加载js就不会产生跨域问题
-//Cross-Origin Read Blocking (CORB) blocked cross-origin response https://raw.githubusercontent.com/haveataste/js/master/hash.js with MIME type text/plain. See https://www.chromestatus.com/feature/5629709824032768 for more details.
-
+//加载CDN文件就不会产生跨域问题
 //数组利用ES6 Set去重
 Array.from(new Set([1,2,3,4,5,5])).length
-
 //截取字符串
 str.substring(from[, to]) -- str.slice(start, end)
 str.substr(from, length)
 //把字符串显示为下标和上标
-str.sub()
-str.sup()
+str.sub(), str.sup()
