@@ -1,40 +1,23 @@
 function sfz(str){
     var id = str.replace(/\s/ig, "");
-    if(!(/^\d{17}[\dxX]$/.test(id))){
-        console.log('身份证号码格式不对！');
-        return;
-    }
+    if(!(/^\d{17}[\dxX]$/.test(id))){console.log('身份证号码格式不对！'); return;}
 
     var bianhao = id.substr(0, 6);
-    if(ssq[bianhao] == undefined){
-        console.log('身份证号码区域位有误！');
-        return;
-    }
+    if(ssq[bianhao] == undefined){console.log('身份证号码区域位有误！'); return;}
 
     var yuefen = {'01':31, '02':29, '03':31, '04':30, '05':31, '06':30, '07':31, '08':31, '09':30, '10':31, '11':30, '12':31};
     var y = parseInt(id.substr(6, 4)), m = id.substr(10, 2), d = parseInt(id.substr(12, 2), 10);
-    if(y || y > 2019 || yuefen[m] == undefined || d < 1 || d > yuefen[m]){
-        console.log('身份证号码年月日有误！');
-        return;
-    }
+    if(y<1900 || y>2019 || yuefen[m]==undefined || d<1 || d>yuefen[m]){console.log('身份证号码年月日有误！'); return;}
     
-    var sex = '男';
-    var s = id.substr(16, 1);
-    if(s % 2 == 0){
-        var sex = '女';
-    }
-
+    var sex = (id.substr(16, 1) % 2 == 0)?'女':'男';
+    
     var a = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
     var valide = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2];
     var sum = 0;
     for(var i = 0; i < 17; i++){
         sum += id.charAt(i) * a[i];
     }
-    var mod = sum % 11;
-    if(valide[mod] != id.charAt(17).toUpperCase()){
-        console.log('身份证号码校验位错误！');
-        return;
-    }
+    if(valide[sum%11] != id.charAt(17).toUpperCase()){console.log('身份证号码校验位错误！'); return;}
     
     alert('身份证号码：'+id+'\n地区：'+ssq[bianhao]+'\n日期：'+y+'年'+parseInt(m)+'月'+parseInt(d)+'日'+'\n性别：'+sex);
 }
