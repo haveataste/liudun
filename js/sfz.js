@@ -11,12 +11,9 @@ function sfz(str){
         return;
     }
 
-    var yuefen = [];
-    yuefen['02'] = 29, yuefen['01'] = 31, yuefen['03'] = 31, yuefen['04'] = 30, yuefen['05'] = 31, yuefen['06'] = 30, yuefen['07'] = 31, yuefen['08'] = 31, yuefen['09'] = 30, yuefen['10'] = 31, yuefen['11'] = 30, yuefen['12'] = 31;
-    var y = id.substr(6, 4);
-    var m = id.substr(10, 2);
-    var d = id.substr(12, 2);
-    if(parseInt(y) < 1900 || parseInt(y) > 2019 || yuefen[m] == undefined || parseInt(d, 10) < 1 || parseInt(d, 10) > yuefen[m]){
+    var yuefen = {'01':31, '02':29, '03':31, '04':30, '05':31, '06':30, '07':31, '08':31, '09':30, '10':31, '11':30, '12':31};
+    var y = parseInt(id.substr(6, 4)), m = id.substr(10, 2), d = parseInt(id.substr(12, 2), 10);
+    if(y || y > 2019 || yuefen[m] == undefined || d < 1 || d > yuefen[m]){
         console.log('身份证号码年月日有误！');
         return;
     }
