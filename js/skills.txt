@@ -1,6 +1,7 @@
 浏览器内核: Microsoft的Trident(IE内核), Firefox的Gecko(火狐内核), Apple的Webkit(Safari内核), Google的Blink(Chrome内核), Opera的Presto(已废弃,Opera)
 HTTP协议是无状态协议，即对事务处理没有记忆能力。
-为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句 "use strict"; 
+为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句 "use strict";
+加载CDN文件就不会产生跨域问题。
 
 #代表网页中的一个位置，其右面的字符就是该位置的标识符。仅用来指导浏览器动作的，对服务器端完全无用。浏览器读取这个URL后，会自动将该位置滚动至可视区域。作为网页位置指定标识符，有两个方法。一是使用锚点，比如<a name="print"></a>，二是使用id属性，比如<div id="print">。
 ?有连接域名和参数的作用、清除缓存的作用。
@@ -55,10 +56,6 @@ jquery对象转换成JS对象: 1.jquery对象[索引值]; 2.jquery对象.get(索
 //cookie读取、写入、删除插件jquery.cookie.js
 sn.src = "https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js";
 $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
-
-//加载CDN文件就不会产生跨域问题
-//数组利用ES6 Set去重
-Array.from(new Set([1,2,3,4,5,5])).length
 
 //定时执行
 var t = new Date();
