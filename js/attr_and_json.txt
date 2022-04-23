@@ -1,0 +1,37 @@
+// Array
+var arr = new Array();
+console.log(typeof arr === 'object');
+console.log(arr.length);
+
+for(let i=0;i<10;i++)arr.push(i);
+console.log(arr);
+arr.unshift(3);
+console.log(arr);
+arr.pop();
+console.log(arr);
+arr.shift();
+console.log(arr);
+
+// arr.splice(index, count[, element]);
+console.log(arr.slice(4, 6));
+arr.sort((a, b)=>b-a);
+console.log(arr);
+console.log(arr.reverse());
+
+var arrb = ['a', 'b', 'c'];
+console.log(arr.concat(arrb));
+console.log(arr.join('-'));
+
+// forEach, filter, map, reduce, some, every, find
+console.log(arr.some(v=>v>100));
+console.log(arr.every(v=>v>-1));
+console.log(arr.find(v=>v>5));
+
+// JSON
+var s = '{"a":1, "b":2, "c":3, "d":4, "e":5}';
+var jo = JSON.parse(s);
+var j = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5};
+var js = JSON.stringify(j);
+console.log(jo, j, js);
+console.log(j.a, jo['a']);
+for(let i in j)console.log(i + '-->' + j[i]);
