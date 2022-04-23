@@ -11,13 +11,12 @@ function sfz(str){
     
     var sex = (id.substr(16, 1) % 2 == 0)?'女':'男';
     
+    var p = id.split('');
+    var v = p.pop().toUpperCase();
     var a = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
-    var valide = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2];
-    var sum = 0;
-    for(var i = 0; i < 17; i++){
-        sum += id.charAt(i) * a[i];
-    }
-    if(valide[sum%11] != id.charAt(17).toUpperCase()){console.log('身份证号码校验位错误！'); return;}
+    var sum = p.map(i=>i*1).reduce((t, i, j)=>t+i*a[j], 0);
+    var valide = '10X98765432';
+    if(valide.charAt(sum%11) != v){console.log('身份证号码校验位错误！'); return;}
     
     alert('身份证号码：'+id+'\n地区：'+ssq[bianhao]+'\n日期：'+y+'年'+parseInt(m)+'月'+parseInt(d)+'日'+'\n性别：'+sex);
 }
