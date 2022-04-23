@@ -59,11 +59,6 @@ $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
 //加载CDN文件就不会产生跨域问题
 //数组利用ES6 Set去重
 Array.from(new Set([1,2,3,4,5,5])).length
-//截取字符串
-str.substring(from[, to]) -- str.slice(start, end)
-str.substr(from, length)
-//把字符串显示为下标和上标
-str.sub(), str.sup()
 
 //定时执行
 var t = new Date();
