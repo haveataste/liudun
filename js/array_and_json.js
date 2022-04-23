@@ -22,7 +22,7 @@ console.log(arr.slice(4, 6));
 var arrb = ['a', 'b', 'c'];
 console.log(arr.concat(arrb));
 console.log(arr.join('-'));
-// forEach, filter, map, reduce, some, every, find
+// forEach, filter, map, some, every, find, reduce((total, currentValue, currentIndex, array)=>{}, initialValue)
 console.log(arr.some(v=>v>100), arr.every(v=>v>-1), arr.find(v=>v>5));
 // 利用ES6 Set去重
 Array.from(new Set([1,2,3,4,5,5])).length
