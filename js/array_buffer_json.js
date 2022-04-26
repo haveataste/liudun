@@ -29,6 +29,17 @@ Array.from(new Set([1,2,3,4,5,5])).length
 // 判断是否是数组
 Array.isArray(arr)
 
+// Buffer.alloc(size[, fill[, encoding]])
+// Buffer.from(Array|Buffer|String|Object)
+// Buffer.compare(buf1, buf2)
+// Buffer.concat(list[, totalLength])
+const b = Buffer.alloc(10, 1);
+Buffer.isBuffer(b) == true;
+b.length          // 10
+b.toJSON()        // { type: 'Buffer', data: [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ] }
+b.write('aA');    // 2
+b.toString()      // 'aA\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001'
+
 // JSON
 var s = '{"a":1, "b":2, "c":3, "d":4, "e":5}';
 var jo = JSON.parse(s);
