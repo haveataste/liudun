@@ -58,14 +58,8 @@ sn.src = "https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js";
 $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
 
 //定时执行
-var t = new Date();
-t.setFullYear(2020);
-t.setMonth(1); //0~11
-t.setDate(12); //1-31
-t.setHours(16); //0~23
-t.setMinutes(16);
-t.setSeconds(0);
-t.setMilliseconds(0);
+//var t = new Date(); t.setFullYear(2020); t.setMonth([0-11]); t.setDate([1-31]); t.setHours([0-23]); t.setMinutes(16); t.setSeconds(0); t.setMilliseconds(0);
+var t = new Date(2020, 1, 12, 16, 16, 0, 0);
 var dt = Date.parse(t)-Date.parse(new Date());
 setTimeout(()=>console.log('ok'), dt);
 
