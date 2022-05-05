@@ -5,9 +5,9 @@
     <body>
         <div id="box">abc</div>
         <script>
-          let people = ['geddy', 'neil', 'alex'];
-          let html = ejs.render('<%= people.join(", "); %>', {people: people});
-          document.getElementById('box').innerHTML = html;
+            let people = ['geddy', 'neil', 'alex'];
+            let html = ejs.render('<%= people.join(", "); %>', {people: people});
+            document.getElementById('box').innerHTML = html;
         </script>
     </body>
 </html>
