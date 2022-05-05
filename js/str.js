@@ -32,3 +32,4 @@ encodeURIComponent(s)   // 'https%3A%2F%2Fuser%3Apassword%40abc.com%2Fpath%2Ffil
 decodeURI(s), decodeURIComponent(s)
 // base64
 window.btoa(s), window.atob(s)
+Buffer.from(s).toString('base64'), Buffer.from('aGVsbG93b3JsZA==', 'base64').toString()
