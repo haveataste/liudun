@@ -38,7 +38,7 @@ Buffer.isBuffer(b) == true;
 b.length          // 10
 b.toJSON()        // { type: 'Buffer', data: [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ] }
 b.write('aA');    // 2
-b.toString()      // 'aA\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001'
+b.toString(['base64'|'hex'])      // 'aA\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001'
 
 // JSON
 var s = '{"a":1, "b":2, "c":3, "d":4, "e":5}';
