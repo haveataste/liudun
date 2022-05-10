@@ -60,7 +60,8 @@ $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
 //定时执行
 //var t = new Date(); t.setFullYear(2020); t.setMonth([0-11]); t.setDate([1-31]); t.setHours([0-23]); t.setMinutes(16); t.setSeconds(0); t.setMilliseconds(0);
 var t = new Date(2020, 1, 12, 16, 16, 0, 0);
-var dt = Date.parse(t)-Date.parse(new Date());
+//var dt = Date.parse(t)-Date.parse(new Date());
+var dt = t.getTime()-(new Date()).getTime();
 setTimeout(()=>console.log('ok'), dt);
 
 //Blob
@@ -69,9 +70,13 @@ setTimeout(()=>console.log('ok'), dt);
     var content = document.getElementsByTagName('html')[0].innerHTML;
     var blob = new Blob([content]);
     a.href = URL.createObjectURL(blob);
-    //a.download = document.title + '.html';
-    a.download = document.getElementsByTagName('title')[0].innerHTML + '.html';
-    //document.body.appendChild(a);
+    //a.download = document.getElementsByTagName('title')[0].innerHTML + '.html';
+    a.download = document.title + '.html';
+    document.body.appendChild(a);
     a.click();
-    //document.body.removeChild(a);
+    document.body.removeChild(a);
 })();
+
+认识js发布订阅者模式
+发布订阅者模式又叫观察者模式，它定义对象间的一种一对多的依赖关系，当一个对象的状态发生变化时，所有依赖于它的对象都将得到通知。我们一般用事件模型来代替传统发布订阅模式。
+就拿用户订阅公众号来说，用户根据需求来订阅自己喜欢的公众号，一旦公众号有新的文章，便会主动推给每个订阅它的用户，这种模式解决了很多日常的需求，就比如现在比较流行的框架 vue , 其关键的动态绑定原理就是由订阅发布者模式和数据劫持技术来实现。
