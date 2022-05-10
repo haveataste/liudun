@@ -4,11 +4,8 @@ typeof arr === 'object';
 arr.length === 0;
 // 增加、删除元素
 for(let i=0;i<10;i++)arr.push(i);
-console.log(arr);
 arr.unshift(3);
-console.log(arr);
 arr.pop();
-console.log(arr);
 arr.shift();
 console.log(arr);
 // arr.splice(index, count[, element]);
@@ -22,7 +19,7 @@ console.log(arr.slice(4, 6));
 var arrb = ['a', 'b', 'c'];
 console.log(arr.concat(arrb));
 console.log(arr.join('-'));
-// forEach, filter, map, some, every, find, reduce((total, currentValue, currentIndex, array)=>{}, initialValue)
+// indexOf, forEach, filter, map, some, every, find, reduce((total, currentValue, currentIndex, array)=>{}, initialValue)
 console.log(arr.some(v=>v>100), arr.every(v=>v>-1), arr.find(v=>v>5));
 // 利用ES6 Set去重
 Array.from(new Set([1,2,3,4,5,5])).length
