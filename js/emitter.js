@@ -7,9 +7,7 @@ Emitter.on = function(key, fn){
 //发布事件
 Emitter.emit = function(key, ...args){
     let list = this.list[key];
-    if(list.length == 0){
-        return
-    }
+    if(list.length == 0) return;
     list.forEach((fn) =>{
         fn.apply(this, args);
     })
@@ -19,16 +17,10 @@ Emitter.emit = function(key, ...args){
 Emitter.remove = function(key, fn){
     let fns = this.list[key];
     let l = fns.length;
-    if(l == 0){
-        return
-    }
-    if(!fn){
-        return this.list[key].length = 0;
-    }
+    if(l == 0) return;
+    if(!fn) return this.list[key].length = 0;
     for(let i=0;i<l;i++){
-        if(fn == fns[i]){
-            this.list[key].splice(i, 1);
-        }
+        if(fn == fns[i]) this.list[key].splice(i, 1);
     }
 };
 
