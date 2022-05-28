@@ -7,19 +7,17 @@ for(let i=0;i<10;i++)arr.push(i);
 arr.unshift(3);
 arr.pop();
 arr.shift();
-console.log(arr);
 // arr.splice(index, count[, element]);
 // 排序
 arr.sort((a, b)=>b-a);
-console.log(arr);
-console.log(arr.reverse());
+arr.reverse();
 // 切片
 console.log(arr.slice(4, 6));
 // 拼接
 var arrb = ['a', 'b', 'c'];
 console.log(arr.concat(arrb));
 console.log(arr.join('-'));
-// indexOf, includes, forEach, filter, map, some, every, find, reduce((total, currentValue, currentIndex, array)=>{}, initialValue)
+// indexOf, indexOf, includes, forEach, filter, map, some, every, find, reduce((total, currentValue, currentIndex, array)=>{}, initialValue)
 console.log(arr.some(v=>v>100), arr.every(v=>v>-1), arr.find(v=>v>5));
 // 利用ES6 Set去重
 Array.from(new Set([1,2,3,4,5,5])).length
