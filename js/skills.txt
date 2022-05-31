@@ -3,12 +3,14 @@ HTTP协议是无状态协议，即对事务处理没有记忆能力。
 为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句 "use strict";
 加载CDN文件就不会产生跨域问题。
 
-#代表网页中的一个位置，其右面的字符就是该位置的标识符。仅用来指导浏览器动作的，对服务器端完全无用。浏览器读取这个URL后，会自动将该位置滚动至可视区域。作为网页位置指定标识符，有两个方法。一是使用锚点，比如<a name="print"></a>，二是使用id属性，比如<div id="print">。
+#代表网页中的一个位置，其右面的字符就是该位置的标识符。仅用来指导浏览器动作的，对服务器端完全无用。浏览器读取这个URL后，会自动将该位置滚动至可视区域。
+ 作为网页位置指定标识符，有两个方法。1.使用锚点，比如<a name="print"></a>，2.使用id属性，比如<div id="print">。
 ?有连接域名和参数的作用、清除缓存的作用。
 &是不同参数的间隔符。
 
-JS获取元素属性和自定义属性，设置属性：
-1.原生JS
+js获取元素属性和自定义属性，设置属性：
+1.原生js
+element."属性", element["属性"]
 element.getAttribute("属性")
 element.setAttribute("属性","值")
 2.jquery
@@ -18,21 +20,20 @@ $(element).attr("属性","值")
 $("#id").prop("edit-id");
 $("#id").prop("edit-id","123");
 
-JS中xpath的使用：
+xpath的使用：
 var result = document.evaluate("//a[@href]", document, null, XPathResult.ANY_TYPE, null);
 var nodes = result.iterateNext(); //枚举第一个元素
 while (nodes){
     console.log(nodes.getAttribute('href'));
     nodes=result.iterateNext(); //枚举下一个元素
 }
-JS中selector的使用：
+selector的使用：
 document.querySelectorAll('a').forEach(i=>console.log(i.href));
 
 document.getElementById("logic_id").innerHTML; //td里有html元素的时候
 document.getElementById("logic_id").innerText; //td里只有字符的时候
 document.getElementById("logic_id").value;     //这个td没有value这个参数你是获取不到的，除非你在<td value="xxx">这样你就能获取了，但是这种写法一般只用于input输入框
 
-window.document.getElementById("elements");
 window.document.cookie
 window.document.forms.length
 window.innerHeight, window.innerWidth
@@ -50,8 +51,8 @@ util = {
 >"2.2.0"
 >$('body').jquery
 >"2.2.0"
-JS对象转换成jquery对象: $(JS对象);
-jquery对象转换成JS对象: 1.jquery对象[索引值]; 2.jquery对象.get(索引值).
+js对象转换成jquery对象: $(js对象);
+jquery对象转换成js对象: 1.jquery对象[索引值]; 2.jquery对象.get(索引值).
 
 //cookie读取、写入、删除插件jquery.cookie.js
 sn.src = "https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js";
@@ -59,8 +60,8 @@ $.cookie('key', 'value', { expires:7, path:'/', secure:false, })
 
 //定时执行
 //var t = new Date(); t.setFullYear(2020); t.setMonth([0-11]); t.setDate([1-31]); t.setHours([0-23]); t.setMinutes(16); t.setSeconds(0); t.setMilliseconds(0);
-var t = new Date(2020, 1, 12, 16, 16, 0, 0);
 //var dt = Date.parse(t)-Date.parse(new Date());
+var t = new Date(2020, 1, 12, 16, 16, 0, 0);
 var dt = t.getTime()-(new Date()).getTime();
 setTimeout(()=>console.log('ok'), dt);
 
