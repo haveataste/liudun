@@ -30,9 +30,9 @@ Array.isArray(arr)
 // Buffer.concat(list[, totalLength])
 const b = Buffer.alloc(10, 1);
 Buffer.isBuffer(b) == true;
-b.length          // 10
-b.toJSON()        // { type: 'Buffer', data: [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ] }
-b.write('aA');    // 2
+b.length                          // 10
+b.toJSON()                        // { type: 'Buffer', data: [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ] }
+b.write('aA');                    // 2
 b.toString(['base64'|'hex'])      // 'aA\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001'
 
 // JSON
