@@ -13,6 +13,17 @@ p.then(message => {
     console.log('This is in the catch ' + message);
 });
 
+let p = new Promise((resolve, reject) => {
+    let a = Math.random();
+    if(a>0.5) resolve('Success ' + String(a));
+    else reject('Failed ' + String(a));
+});
+p.then(value => {
+    console.log('This is in the then ' + value);
+}).catch(reason=>{
+    console.log('This is in the catch ' + reason);
+});
+
 
 // fetch API: https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
 fetch(url).then(res=>res.text()).then(data=>console.log(data));
