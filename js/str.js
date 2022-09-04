@@ -15,13 +15,12 @@ s.replace(/bc/, 'qq')     //'aqqdefghijklmn'
 // 分割
 s.split('').join('-')
 // 截取字符串
-// str.substring(from[, to]) -- str.slice(start, end)
-// str.substr(from, length)
+s.substring(from[, to]) -- s.slice(start, end)
+s.substr(from, length)
 // 把字符串显示为下标和上标
 s.sub(), s.sup()
 // 大小写
-s.toLowerCase()
-s.toUpperCase()
+s.toLowerCase(), s.toUpperCase()
 
 // 编码字符串用escape，编码URI使用encodeURIComponent、encodeURI，并且encodeURIComponent编码的范围更大
 var s = "https://user:password@abc.com/path/file?a=1&b=2#id";
