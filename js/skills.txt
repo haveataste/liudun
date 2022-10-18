@@ -1,5 +1,5 @@
 浏览器内核: Microsoft的Trident(IE内核), Firefox的Gecko(火狐内核), Apple的Webkit(Safari内核), Google的Blink(Chrome内核), Opera的Presto(已废弃,Opera)
-HTTP协议是无状态协议，即对事务处理没有记忆能力。
+HTTP协议是面向文本(text-oriented)的无状态协议，即对事务处理没有记忆能力。
 为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句 "use strict";
 加载CDN文件就不会产生跨域问题。
 
