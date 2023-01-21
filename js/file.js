@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 // fs.open(path, flags,[ mode,] callback);
-fs.open("fs.js", "r+", function(err, fd){
+fs.open("file.js", "r+", function(err, fd){
     if(err){return console.error(err);}
     console.log("file open success!");
 
