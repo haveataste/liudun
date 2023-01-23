@@ -31,7 +31,7 @@ fetch(url, {
   method: 'POST', // or 'PUT'
   headers: new Headers({
     'Content-Type': 'application/json'
-  })
+  }),
   body: JSON.stringify(data), // data can be `string` or {object}!
 }).then(res=>res.json()).then(data=>console.log(data)).catch(error=>console.error(error));
 // 除非响应报文包含了正确CORS响应头: {'Access-Control-Allow-Origin': '*'}
