@@ -36,6 +36,20 @@ document.getElementById("logic_id").innerHTML; //td里有html元素的时候
 document.getElementById("logic_id").innerText; //td里只有字符的时候
 document.getElementById("logic_id").value;     //这个td没有value这个参数你是获取不到的，除非你在<td value="xxx">这样你就能获取了，但是这种写法一般只用于input输入框
 
+javascript中的事件：
+onclick , ondblclick , onfocus , onblur
+onmouseover , onmouseout , onmousedown , onmouseup
+onkeydown , onkeyup , onkeypress
+  
+DOM (Document Object Model)
+document.getElementById(" ")
+document.getElementsByName()
+document.getElementsByTagName()
+getAttribute()  setAttribute()
+parentNode  removeChild()  appendChile()
+
+js中变量类型：undefined, number, string, boolean, object, function
+
 window.document.cookie
 window.document.forms.length
 window.innerHeight, window.innerWidth
