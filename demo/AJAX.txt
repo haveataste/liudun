@@ -1,15 +1,14 @@
-//´´½¨ XMLHttpRequest ¶ÔÏó
+//åˆ›å»º XMLHttpRequest å¯¹è±¡
 var xmlhttp;
-if (window.XMLHttpRequest){
+if(window.XMLHttpRequest){
     // code for IE7+, Firefox, Chrome, Opera, Safari
     xmlhttp=new XMLHttpRequest();
-}
-else{
+}else{
     // code for IE6, IE5
     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 }
-    
-//Ïò·şÎñÆ÷·¢ËÍÇëÇó
+
+//å‘æœåŠ¡å™¨å‘é€è¯·æ±‚
 xmlhttp.open("GET","test1.txt",true);
 xmlhttp.send();
 
@@ -17,29 +16,25 @@ xmlhttp.open("POST","ajax_test.asp",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 xmlhttp.send("fname=Bill&lname=Gates");
 
-//·şÎñÆ÷ÏìÓ¦
-xmlhttp.responseText	»ñµÃ×Ö·û´®ĞÎÊ½µÄÏìÓ¦Êı¾İ¡£
-xmlhttp.responseXML	»ñµÃ XML ĞÎÊ½µÄÏìÓ¦Êı¾İ¡£
+//æœåŠ¡å™¨å“åº”
+xmlhttp.responseText    è·å¾—å­—ç¬¦ä¸²å½¢å¼çš„å“åº”æ•°æ®ã€‚
+xmlhttp.responseXML	    è·å¾— XML å½¢å¼çš„å“åº”æ•°æ®ã€‚
 
-onreadystatechange ÊÂ¼ş
-µ±ÇëÇó±»·¢ËÍµ½·şÎñÆ÷Ê±£¬ÎÒÃÇĞèÒªÖ´ĞĞÒ»Ğ©»ùÓÚÏìÓ¦µÄÈÎÎñ¡£
-Ã¿µ± readyState ¸Ä±äÊ±£¬¾Í»á´¥·¢ onreadystatechange ÊÂ¼ş¡£
-readyState ÊôĞÔ´æÓĞ XMLHttpRequest µÄ×´Ì¬ĞÅÏ¢¡£
-xmlhttp.onreadystatechange=function()
-{
-    if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+//onreadystatechange äº‹ä»¶
+//å½“è¯·æ±‚è¢«å‘é€åˆ°æœåŠ¡å™¨æ—¶ï¼Œæˆ‘ä»¬éœ€è¦æ‰§è¡Œä¸€äº›åŸºäºå“åº”çš„ä»»åŠ¡ã€‚æ¯å½“ readyState æ”¹å˜æ—¶ï¼Œå°±ä¼šè§¦å‘ onreadystatechange äº‹ä»¶ã€‚readyState å±æ€§å­˜æœ‰ XMLHttpRequest çš„çŠ¶æ€ä¿¡æ¯ã€‚
+xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+        document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
     }
 }
 
-onreadystatechange	´æ´¢º¯Êı£¨»òº¯ÊıÃû£©£¬Ã¿µ± readyState ÊôĞÔ¸Ä±äÊ±£¬¾Í»áµ÷ÓÃ¸Ãº¯Êı¡£
-readyState	´æÓĞ XMLHttpRequest µÄ×´Ì¬¡£´Ó 0 µ½ 4 ·¢Éú±ä»¯¡£
-0: ÇëÇóÎ´³õÊ¼»¯
-1: ·şÎñÆ÷Á¬½ÓÒÑ½¨Á¢
-2: ÇëÇóÒÑ½ÓÊÕ
-3: ÇëÇó´¦ÀíÖĞ
-4: ÇëÇóÒÑÍê³É£¬ÇÒÏìÓ¦ÒÑ¾ÍĞ÷
+//onreadystatechange å­˜å‚¨å‡½æ•°ï¼ˆæˆ–å‡½æ•°åï¼‰ï¼Œæ¯å½“ readyState å±æ€§æ”¹å˜æ—¶ï¼Œå°±ä¼šè°ƒç”¨è¯¥å‡½æ•°ã€‚
+//readyState å­˜æœ‰ XMLHttpRequest çš„çŠ¶æ€ã€‚ä» 0 åˆ° 4 å‘ç”Ÿå˜åŒ–ã€‚
+0: è¯·æ±‚æœªåˆå§‹åŒ–
+1: æœåŠ¡å™¨è¿æ¥å·²å»ºç«‹
+2: è¯·æ±‚å·²æ¥æ”¶
+3: è¯·æ±‚å¤„ç†ä¸­
+4: è¯·æ±‚å·²å®Œæˆï¼Œä¸”å“åº”å·²å°±ç»ª
 status	
 200: "OK"
-404: Î´ÕÒµ½Ò³Ãæ
+404: æœªæ‰¾åˆ°é¡µé¢
