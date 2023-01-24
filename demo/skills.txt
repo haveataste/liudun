@@ -1,0 +1,102 @@
+浏览器内核: Microsoft的Trident(IE内核), Firefox的Gecko(火狐内核), Apple的Webkit(Safari内核), Google的Blink(Chrome内核), Opera的Presto(已废弃,Opera)
+HTTP协议是面向文本(text-oriented)的无状态协议，即对事务处理没有记忆能力。
+为整个脚本文件开启严格模式，需要在所有语句之前放一个特定语句 "use strict";
+加载CDN文件就不会产生跨域问题。
+
+CGI（Common Gateway Interface）是Web服务器运行时外部程序的规范，按CGI编写的程序可以扩展服务器功能。
+
+#代表网页中的一个位置，其右面的字符就是该位置的标识符。仅用来指导浏览器动作的，对服务器端完全无用。浏览器读取这个URL后，会自动将该位置滚动至可视区域。
+ 作为网页位置指定标识符，有两个方法。1.使用锚点，比如<a name="print"></a>，2.使用id属性，比如<div id="print">。
+?有连接域名和参数的作用、清除缓存的作用。
+&是不同参数的间隔符。
+
+js获取元素属性和自定义属性，设置属性：
+1.原生js
+element."属性", element["属性"]
+element.getAttribute("属性")
+element.setAttribute("属性","值")
+2.jquery
+$(element).attr("属性")
+$(element).attr("属性","值")
+3.prop:读取DOM原生属性
+$("#id").prop("edit-id");
+$("#id").prop("edit-id","123");
+
+xpath的使用：
+var result = document.evaluate("//a[@href]", document, null, XPathResult.ANY_TYPE, null);
+var nodes = result.iterateNext(); //枚举第一个元素
+while (nodes){
+    console.log(nodes.getAttribute('href'));
+    nodes=result.iterateNext(); //枚举下一个元素
+}
+selector的使用：
+document.querySelectorAll('a').forEach(i=>console.log(i.href));
+
+document.getElementById("logic_id").innerHTML; //td里有html元素的时候
+document.getElementById("logic_id").innerText; //td里只有字符的时候
+document.getElementById("logic_id").value;     //这个td没有value这个参数你是获取不到的，除非你在<td value="xxx">这样你就能获取了，但是这种写法一般只用于input输入框
+
+javascript中的事件：
+onclick , ondblclick , onfocus , onblur
+onmouseover , onmouseout , onmousedown , onmouseup
+onkeydown , onkeyup , onkeypress
+  
+DOM (Document Object Model)
+document.getElementById(" ")
+document.getElementsByName()
+document.getElementsByTagName()
+getAttribute()  setAttribute()
+parentNode  removeChild()  appendChile()
+
+js中变量类型：undefined, number, string, boolean, object, function
+
+window.document.cookie
+window.document.forms.length
+window.innerHeight, window.innerWidth
+window.screen.height
+window.location.href
+window.history.back()
+util = {
+    isXP    : window.navigator.userAgent.indexOf("Windows NT 5.1")>-1,
+    isVista : navigator.userAgent.indexOf("Windows NT 6.0")>-1,
+    isWin7  : navigator.userAgent.indexOf("Windows NT 6.1")>-1,
+    _screen : screen.width + 'x' + screen.height
+}; 
+
+>$.fn.jquery
+>"2.2.0"
+>$('body').jquery
+>"2.2.0"
+js对象转换成jquery对象: $(js对象);
+jquery对象转换成js对象: 1.jquery对象[索引值]; 2.jquery对象.get(索引值).
+
+//cookie读取、写入、删除插件jquery.cookie.js
+sn.src = "https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js";
+$.cookie('key', 'value', { expires:7, path:'/', secure:false, })
+
+//定时执行
+//var t = new Date(); t.setFullYear(2020); t.setMonth([0-11]); t.setDate([1-31]); t.setHours([0-23]); t.setMinutes(16); t.setSeconds(0); t.setMilliseconds(0);
+//var dt = Date.parse(t)-Date.parse(new Date());
+var t = new Date(2020, 1, 12, 16, 16, 0, 0);
+var dt = t.getTime()-(new Date()).getTime();
+setTimeout(()=>console.log('ok'), dt);
+
+认识js发布订阅者模式
+发布订阅者模式又叫观察者模式，它定义对象间的一种一对多的依赖关系，当一个对象的状态发生变化时，所有依赖于它的对象都将得到通知。我们一般用事件模型来代替传统发布订阅模式。
+就拿用户订阅公众号来说，用户根据需求来订阅自己喜欢的公众号，一旦公众号有新的文章，便会主动推给每个订阅它的用户，这种模式解决了很多日常的需求，就比如现在比较流行的框架 vue , 其关键的动态绑定原理就是由订阅发布者模式和数据劫持技术来实现。
+
+每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。
+那么假如我们让原型对象等于另一个类型的实例，结果会怎样？显然，此时的原型对象将包含一个指向另一个原型的指针,相应地，另一个原型中也包含着一个指向另一个构造函数的指针。
+假如另一个原型又是另一个类型的实例，那么上述关系依然成立。如此层层递进，就构成了实例与原型的链条。这就是所谓的原型链的基本概念。
+    ——摘自《javascript高级程序设计》
+
+模板引擎（这里特指用于Web开发的模板引擎）是为了使用户界面与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的HTML文档。
+Jinja2是基于python的模板引擎，功能比较类似于于PHP的smarty，J2EE的Freemarker和velocity。
+EJS是嵌入式JavaScript模板引擎，帮你利用普通的JavaScript代码生成HTML页面。
+
+px和em都是⻓度单位，区别是px的值是固定的，指定是多少就是多少，计算⽐较容易。em 得值不是固定的，并且em会继承⽗级元素的字体⼤⼩。
+浏览器的默认字体⾼都是16px，所以未经调整的浏览器都符合: 1em=16px
+
+Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。自从WSGI被开发出来以后，许多其它语言中也出现了类似接口。
+WSGI 没有官方的实现, 因为WSGI更像一个协议. 只要遵照这些协议,WSGI应用(Application)都可以在任何服务器(Server)上运行, 反之亦然。
+支持WSGI的Web应用框架有很多：BlueBream、bobo、Bottle、CherryPy、Django、Flask
