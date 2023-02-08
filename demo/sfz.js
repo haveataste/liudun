@@ -6,7 +6,7 @@ function sfz(str){
     if(ssq[bianhao] == undefined){console.log('身份证号码区域位有误！'); return;}
 
     var yuefen = {'01':31, '02':29, '03':31, '04':30, '05':31, '06':30, '07':31, '08':31, '09':30, '10':31, '11':30, '12':31};
-    var y = parseInt(id.substr(6, 4)), m = id.substr(10, 2), d = parseInt(id.substr(12, 2), 10);
+    var [y, m, d] = [id.substr(6, 4), id.substr(10, 2), parseInt(id.substr(12, 2), 10)];
     if(y<1900 || y>2019 || yuefen[m]==undefined || d<1 || d>yuefen[m]){console.log('身份证号码年月日有误！'); return;}
     
     var sex = (id.substr(16, 1) % 2 == 0)?'女':'男';
