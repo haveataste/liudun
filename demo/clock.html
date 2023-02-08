@@ -1,39 +1,32 @@
 <html>
 <head>
-<script type = "text/javascript">
-    function startTime(){
-        let D = new Date();
-        let [h, m, s] = [D.getHours(), D.getMinutes(), D.getSeconds()];
-        let t = document.getElementById("txt");
-        switch(s%7){
-            case 0:
-                t.style.color = "#FF0000";
-                break;
-            case 1:
-                t.style.color = "#FF7F00";
-                break;
-            case 2:
-                t.style.color = "#FFFF00";
-                break;
-            case 3:
-                t.style.color = "#00FF00";
-                break;
-            case 4:
-                t.style.color = "#00FFFF";
-                break;
-            case 5:
-                t.style.color = "#0000FF";
-                break;
-            case 6:
-                t.style.color = "8B00FF";
-                break;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colortime</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
         }
-        t.innerHTML = String(h).padStart(2)+":"+String(m).padStart(2)+":"+String(h).padStart(s);
-        setTimeout('startTime()', 500);
-    }
-</script>
+        div{
+            text-align: center;
+            font-size: 80px;
+        }
+    </style>
+    <script type = "text/javascript">
+        const color = ['#F6F6F6', '#56BC8A', '#03645D', '#905AB2', '#263238', '#36B1C5', '#9784DA', '#F0FFF0', '#67AA0A', 'orange'];
+        function startTime(){
+            let D = new Date();
+            let [h, m, s] = [D.getHours(), D.getMinutes(), D.getSeconds()];
+            let t = document.getElementById("txt");
+            t.style.color = color[s%color.length];
+            t.innerHTML = String(h).padStart(2, '0')+":"+String(m).padStart(2, '0')+":"+String(s).padStart(2, '0')+"<br>"+color[s%color.length];
+            setTimeout("startTime()", 1000);
+        }        
+    </script>
 </head>
-<body onload = "startTime()">
-    <div id = "txt" style = "text-align:center"></div>
+<body onload="startTime()">
+    <div id="txt"></div>
 </body>
 </html>
