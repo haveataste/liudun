@@ -1,4 +1,4 @@
-function cc(str){
+function cc(str) {
 	var id = str.replace(/\s/ig, "");
 	if (!(/^\d{17}[\dxX]$/.test(id))) {
 		console.log('身份证号码格式不对！');
