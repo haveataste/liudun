@@ -1,58 +1,39 @@
 <html>
 <head>
-<script type="text/javascript">
-    function startTime()
-    {
-        var today=new Date()
-        var h=today.getHours()
-        var m=today.getMinutes()
-        var s=today.getSeconds()
-        
-        setColor(s);
-        
-        m=checkTime(m)
-        s=checkTime(s)
-        document.getElementById('txt').innerHTML=h+":"+m+":"+s
-        t=setTimeout('startTime()',500)
-    }
-    
-    function setColor(i)
-    {
-        switch(i%7)
-        {
+<script type = "text/javascript">
+    function startTime(){
+        let D = new Date();
+        let [h, m, s] = [D.getHours(), D.getMinutes(), D.getSeconds()];
+        let t = document.getElementById("txt");
+        switch(s%7){
             case 0:
-                document.getElementById("txt").style.color="#FF0000";
+                t.style.color = "#FF0000";
                 break;
             case 1:
-                document.getElementById("txt").style.color="#FF7F00";
+                t.style.color = "#FF7F00";
                 break;
             case 2:
-                document.getElementById("txt").style.color="#FFFF00";
+                t.style.color = "#FFFF00";
                 break;
             case 3:
-                document.getElementById("txt").style.color="#00FF00";
+                t.style.color = "#00FF00";
                 break;
             case 4:
-                document.getElementById("txt").style.color="#00FFFF";
+                t.style.color = "#00FFFF";
                 break;
             case 5:
-                document.getElementById("txt").style.color="#0000FF";
+                t.style.color = "#0000FF";
                 break;
             case 6:
-                document.getElementById("txt").style.color="8B00FF";
+                t.style.color = "8B00FF";
                 break;
         }
-    }
-
-     // add a zero in front of numbers<10
-    function checkTime(i)
-    {
-        if (i<10) {i="0" + i}
-        return i;
+        t.innerHTML = String(h).padStart(2)+":"+String(m).padStart(2)+":"+String(h).padStart(s);
+        setTimeout('startTime()', 500);
     }
 </script>
 </head>
-<body onload="startTime()">
-    <div id="txt" style="text-align:center"></div>
+<body onload = "startTime()">
+    <div id = "txt" style = "text-align:center"></div>
 </body>
 </html>
