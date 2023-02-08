@@ -1,4 +1,4 @@
-//°Ù¶ÈÍøÅÌ×ÊÔ´·ÖÏíÕæÊµµØÖ·
+// ç™¾åº¦ç½‘ç›˜èµ„æºåˆ†äº«çœŸå®åœ°å€
 $.ajax({
     type: "POST",
     url: "/api/sharedownload?sign="+yunData.SIGN+"&timestamp="+yunData.TIMESTAMP,
@@ -10,8 +10,7 @@ $.ajax({
 });
 
 
-//ÎäººÈË²ÅÊĞ³¡
-//Ìí¼Ó¸½Êô±í¸ñ,Ä£·ÂformÌá½»
+// æ­¦æ±‰äººæ‰å¸‚åœº, æ·»åŠ é™„å±è¡¨æ ¼,æ¨¡ä»¿formæäº¤
 $(".query_btn").click(function () {
     $(".QueryList").html($(".QueryListloading").html());
     var box = $(this).parents(".ajaxfrom");
@@ -30,7 +29,7 @@ $(".query_btn").click(function () {
         }
     });
 });
-//·­Ò³¿Ø¼ş
+// ç¿»é¡µæ§ä»¶
 $(".pager a").live("click", function () {
     var box = $(".ajaxfrom");
     var tp = $(this);
@@ -56,11 +55,12 @@ $(".pager a").live("click", function () {
 $.ajax({
     type: "POST",
     url: "http://www.job98.com/templates/_Common/Query/Utils.ashx",
-    data: "tName=QueryFlow&txtName=Áõ¶Ü&txtPerId=421126199411067218",
+    data: "tName=QueryFlow&txtName=someone&txtPerId=1234567890",
     success: function(msg){
         setTimeout(function(){console.log(msg);}, 500);
     }
 });
 
 
-var importJs=document.createElement('script');importJs.setAttribute("type","text/javascript");importJs.setAttribute("src", 'https://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js');document.getElementsByTagName("head")[0].appendChild(importJs);
+// è¯»è€…ä¿¡æ¯æŸ¥è¯¢, http://222.22.255.106:8089/common/ajax/ajaxcommon.js
+getResponse("http://222.22.255.106:8089/opac/dzxmjsjg.jsp","dzxm="+escape("æ— å"));
