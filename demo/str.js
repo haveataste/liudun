@@ -21,6 +21,9 @@ s.substr(from, length)
 s.sub(), s.sup()
 // 大小写
 s.toLowerCase(), s.toUpperCase()
+// 两端补全
+s.padStart(targetLength [, padString])
+s.padEnd(targetLength [, padString])
 
 // 编码字符串用escape，编码URI使用encodeURIComponent、encodeURI，并且encodeURIComponent编码的范围更大
 var s = "https://user:password@abc.com/path/file?a=1&b=2#id";
