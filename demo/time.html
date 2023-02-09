@@ -12,7 +12,6 @@
                     let D = new Date();
                     let td = D.getTime() - server_sent_time - Math.round((D - client_sent_time) / 2);
                     let rt = D.getTime() - td;
-                    show.innerHTML = D.toLocaleString() + "  " + D.getTime();
                     D.setTime(rt);
                     show.innerHTML = 
                         new Date().toLocaleString() + "  " + new Date().getTime() + "<br>" +
