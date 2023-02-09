@@ -46,7 +46,7 @@ document.getElementById(" ")
 document.getElementsByName()
 document.getElementsByTagName()
 getAttribute()  setAttribute()
-parentNode  removeChild()  appendChile()
+parentNode  removeChild()  appendChild()
 
 js中变量类型：undefined, number, string, boolean, object, function
 
