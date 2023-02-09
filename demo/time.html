@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            let n = document.createElement("script");
+            n.setAttribute("src", "https://widget.time.is/?Wuhan_z43d&t=" + new Date().getTime());
+            document.head.appendChild(n);
+
+            var time_is_widget = {
+                cb : function(server_sent_time, client_sent_time, ){
+                    let client_receive_time = new Date();
+                    let td = client_receive_time.getTime() - server_sent_time - Math.round((client_receive_time - client_sent_time) / 2);
+                    let rt = new Date().getTime() - td;
+                    client_receive_time.setTime(rt);
+                    show.innerHTML = client_receive_time.toLocaleString();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="show"></div>
+    </body>
+</html>    
