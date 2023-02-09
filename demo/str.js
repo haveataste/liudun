@@ -12,6 +12,7 @@ s.lastIndexOf('jkl', 0)
 s.match(/bc/)             //[ 'bc', index: 1, input: 'abcdefghijklmn', groups: undefined ]
 s.search(/cd/)            //2
 s.replace(/bc/, 'qq')     //'aqqdefghijklmn'
+/bc/.test(s)              //true
 // 分割
 s.split('').join('-')
 // 截取字符串
