@@ -1,3 +1,3 @@
 # hello-world
 JS,CSS exercise!  
-![zhengxiujing](demo/zxj.jpeg)
+![zhengxiujing](zxj.jpeg)
