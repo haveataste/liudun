@@ -1,7 +1,6 @@
 <script>
     window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
     var fs = null, msg = "";
-
     if(window.requestFileSystem){initFs();}
 
     function initFs(){
