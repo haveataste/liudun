@@ -15,6 +15,8 @@
         }
     </style>
     <script type="text/javascript">
+        const color = ['#F6F6F6', '#56BC8A', '#03645D', '#905AB2', '#263238', '#36B1C5', '#9784DA', '#F0FFF0', '#67AA0A', 'orange'];
+
         // https://time.is/
         // https://widget.time.is/t.js
         let n = document.createElement("script");
@@ -29,7 +31,6 @@
                 this.startTime();
             },
             startTime : function(){
-                const color = ['#F6F6F6', '#56BC8A', '#03645D', '#905AB2', '#263238', '#36B1C5', '#9784DA', '#F0FFF0', '#67AA0A', 'orange'];
                 let D = new Date(new Date() + this.td);
                 let [h, m, s] = [D.getHours(), D.getMinutes(), D.getSeconds()];
                 let t = document.getElementById("show");
