@@ -36,7 +36,7 @@
                 let t = document.getElementById("show");
                 t.style.color = color[s%color.length];
                 t.innerHTML = String(h).padStart(2, '0')+":"+String(m).padStart(2, '0')+":"+String(s).padStart(2, '0')+"<br>"+color[s%color.length];
-                setTimeout("startTime()", 1000);
+                setTimeout(this.startTime(), 1000);
             }
         }
     </script>
