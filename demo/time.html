@@ -16,32 +16,31 @@
     </style>
     <script type="text/javascript">
         const color = ['#F6F6F6', '#56BC8A', '#03645D', '#905AB2', '#263238', '#36B1C5', '#9784DA', '#F0FFF0', '#67AA0A', 'orange'];
+        var td = 0;
 
-        // https://time.is/
-        // https://widget.time.is/t.js
+        function st(){
+            let D = new Date(new Date() + td);
+            let [h, m, s] = [D.getHours(), D.getMinutes(), D.getSeconds()];
+            let t = document.getElementById("show");
+            t.style.color = color[s%color.length];
+            t.innerHTML = String(h).padStart(2, '0')+":"+String(m).padStart(2, '0')+":"+String(s).padStart(2, '0');
+        }
+
+        var time_is_widget = {
+            cb : function(server_sent_time, client_sent_time, ){
+                let D = new Date();
+                td = D.getTime() - server_sent_time - Math.round((D - client_sent_time) / 2);
+                setInterval("st()", 1000);
+            }
+        }
+
+        // https://time.is/, https://widget.time.is/t.js
         let n = document.createElement("script");
         n.setAttribute("src", "https://widget.time.is/?Wuhan_z43d&t=" + new Date().getTime());
         document.head.appendChild(n);
-
-        var time_is_widget = {
-            td : 0,
-            cb : function(server_sent_time, client_sent_time, ){
-                let D = new Date();
-                this.td = D.getTime() - server_sent_time - Math.round((D - client_sent_time) / 2);
-                this.st();
-            },
-            st : function(){
-                let D = new Date(new Date() + this.td);
-                let [h, m, s] = [D.getHours(), D.getMinutes(), D.getSeconds()];
-                let t = document.getElementById("show");
-                t.style.color = color[s%color.length];
-                t.innerHTML = String(h).padStart(2, '0')+":"+String(m).padStart(2, '0')+":"+String(s).padStart(2, '0')+"<br>"+color[s%color.length];
-                setTimeout(this.st(), 1000);
-            }
-        }
     </script>
 </head>
 <body>
     <div id="show"></div>
 </body>
-</html>    
+</html>
