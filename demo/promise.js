@@ -45,3 +45,36 @@ fetch(url, {
 fetch('https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS').then(res=>res.text()).then(data=>console.log(data));
 fetch('https://cors-anywhere.herokuapp.com/www.google.com', {method:'get', Origin:null}).then(res=>res.text()).then(data=>console.log(data.substr(1,100)));
 fetch('http://aruner.net/resources/access-control-with-get/', {method:'GET', headers:{'Origin':'http://arunranga.com'}});
+
+fetch('example.zip')
+.then((res) => {
+    // 获取读取器
+    const reader = res.body.getReader()
+    const type = res.headers.get('Content-Type')
+    const data = []
+
+    return new Promise((resolve) => {
+        // 读取所有数据
+        function push() {
+            reader.read().then(({done, value}) => {
+                data.push(value)
+                if (done) {
+                    // 包装成 blob 对象并返回
+                    resolve(new Blob(data, { type }))
+                } else {
+                    push()
+                }
+            })
+        }
+        push()
+    })
+})
+.then(blob => {
+    const url = URL.createObjectURL(blob)
+    let a = document.createElement('a')
+    a.download = 'example.zip'
+    a.href = url
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+})
