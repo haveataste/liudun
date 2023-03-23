@@ -28,15 +28,15 @@
             cb : function(server_sent_time, client_sent_time, ){
                 let D = new Date();
                 this.td = D.getTime() - server_sent_time - Math.round((D - client_sent_time) / 2);
-                this.startTime();
+                this.st();
             },
-            startTime : function(){
+            st : function(){
                 let D = new Date(new Date() + this.td);
                 let [h, m, s] = [D.getHours(), D.getMinutes(), D.getSeconds()];
                 let t = document.getElementById("show");
                 t.style.color = color[s%color.length];
                 t.innerHTML = String(h).padStart(2, '0')+":"+String(m).padStart(2, '0')+":"+String(s).padStart(2, '0')+"<br>"+color[s%color.length];
-                setTimeout(this.startTime(), 1000);
+                setTimeout(this.st(), 1000);
             }
         }
     </script>
