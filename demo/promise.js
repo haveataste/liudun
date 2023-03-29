@@ -47,7 +47,7 @@ fetch('https://cors-anywhere.herokuapp.com/www.google.com', {method:'get', Origi
 fetch('http://aruner.net/resources/access-control-with-get/', {method:'GET', headers:{'Origin':'http://arunranga.com'}});
 
 fetch('example.zip')
-.then((res) => {
+.then(res => {
     // 获取读取器
     const reader = res.body.getReader()
     const type = res.headers.get('Content-Type')
