@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSS画的GitHub吉祥物</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #FFFA84;
+}
+.head {
+    width: 400px;
+    height: 300px;
+    background-color: #000;
+    -webkit-border-top-left-radius: 55%;
+    -webkit-border-top-right-radius: 55%;
+    -webkit-border-bottom-left-radius: 45%;
+    -webkit-border-bottom-right-radius: 45%;
+    -moz-border-top-left-radius: 60%;
+    -moz-border-top-right-radius: 60%;
+    -moz-border-bottom-left-radius: 45%;
+    -moz-border-bottom-right-radius: 45%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.eat_l {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #000;
+    position: relative;
+    top: -30px;
+    left: 20px;
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+}
+.eat_r {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #000;
+    position: relative;
+    top: -130px;
+    left: 280px;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+}
+.face {
+    width: 300px;
+    height: 150px;
+    background-color: #F3C9B1;
+    -webkit-border-top-left-radius: 40%;
+    -webkit-border-top-right-radius: 40%;
+    -webkit-border-bottom-left-radius: 39%;
+    -webkit-border-bottom-right-radius: 39%;
+    -moz-border-top-left-radius: 40%;
+    -moz-border-top-right-radius: 40%;
+    -moz-border-bottom-left-radius: 39%;
+    -moz-border-bottom-right-radius: 39%;
+    margin: 0 auto;
+    position: relative;
+    top: -70px;
+}
+.eye_l {
+    width: 35px;
+    height: 60px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: #AE5953;
+    position: relative;
+    border: 9px solid #fff;
+    top: 30px;
+    left: 40px;
+}
+.eye_r {
+    width: 35px;
+    height: 60px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: #AE5953;
+    position: relative;
+    border: 9px solid #fff;
+    top: -47px;
+    left: 210px;
+}
+.curve1 {
+    height: 100px;
+    width: 2px;
+    background-color: #000;
+    border: 3px solid #000;
+    -moz-border-radius: 70%;
+    -webkit-border-radius: 70%;
+    -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    position: relative;
+    left: 20px;
+    top: -6px;
+}
+.curve2 {
+    height: 100px;
+    width: 2px;
+    background-color: #000;
+    border: 3px solid #000;
+    -moz-border-radius: 70%;
+    -webkit-border-radius: 70%;
+    -webkit-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+    position: relative;
+    left: -26px;
+    top: -110px;
+}
+.curve3 {
+    height: 100px;
+    width: 2px;
+    background-color: #000;
+    border: 3px solid #000;
+    -moz-border-radius: 70%;
+    -webkit-border-radius: 70%;
+    -webkit-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+    position: relative;
+    left: -25px;
+    top: -9px;
+}
+.curve4 {
+    height: 100px;
+    width: 2px;
+    background-color: #000;
+    border: 3px solid #000;
+    -moz-border-radius: 70%;
+    -webkit-border-radius: 70%;
+    -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    position: relative;
+    left: 19px;
+    top: -115px;
+}
+.nose {
+    width: 13px;
+    height: 13px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: #AE5953;
+    position: relative;
+    top: -50px;
+    left: 145px;
+}
+.mouth {
+    position: absolute;
+    bottom: 9px;
+    left: 123px;
+    margin-left: -(50px / 2 + 2);
+    width: 50px;
+    height: 140px;
+    border-bottom: 5px solid #AE5953;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 50%;
+}
+.m1 {
+    width: 150px;
+    height: 10px;
+    border-top: 5px solid #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    top: -120px;
+    left: -110px;
+    -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+}
+.m2 {
+    width: 150px;
+    height: 10px;
+    border-top: 5px solid #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    top: -150px;
+    left: -110px;
+}
+.m3 {
+    width: 150px;
+    height: 10px;
+    border-top: 5px solid #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    top: -150px;
+    left: 348px;
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+}
+.m4 {
+    width: 150px;
+    height: 10px;
+    border-top: 5px solid #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    top: -180px;
+    left: 350px;
+}
+</style>
+</head>
+
+<body>
+<div class="github_mascot">
+    <div class="head">
+        <div class="eat_l">
+            <div class=c urve3></div>
+            <div class=c urve4></div>
+        </div>
+        <div class="eat_r ">
+            <div class=c urve1></div>
+            <div class=c urve2></div>
+        </div>
+        <div class="face">
+            <div class="eye_l"></div>
+            <div class="eye_r"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="mustache_l"></div>
+        <div class="m1"></div>
+        <div class="m2"></div>
+        <div class="mustache_r"></div>
+        <div class="m3"></div>
+        <div class="m4"></div>
+    </div>
+</div>
+</body>
+</html>
